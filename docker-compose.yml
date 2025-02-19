@@ -1,0 +1,7 @@
+services:
+  app:
+    image: yacooti/cost-of-living-forecaster:v1
+    container_name: cost-of-living-forecaster
+    ports:
+      - "9000:9000"
+    restart: always
