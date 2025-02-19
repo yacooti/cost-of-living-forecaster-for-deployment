@@ -71,6 +71,9 @@ docker-compose.override.yml
 *.bak
 *.tmp
 
+# macOS system files
+.DS_Store
+
 #Exclude the model
 models/*
 
