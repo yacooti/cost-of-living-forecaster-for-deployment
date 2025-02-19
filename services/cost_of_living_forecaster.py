@@ -26,16 +26,19 @@ class CostOfLivingForecaster:
         # Create a base dataframe with the required columns
         data = pd.DataFrame([[year, month]], columns=["Year", "Month"])
         
+        # Identify area-related columns (exclude "Year" and "Month")
+        area_columns = [col for col in encoder_columns if col not in ["Year", "Month"]]
+        
         # One-hot encode the Area column
-        for col in encoder_columns:
+        for col in area_columns:
             data[col] = 0 # Initialize all area columns with 0
             
         area_col = f"Area_{area}"
         
-        if area_col in encoder_columns:
+        if area_col in area_columns:
             data[area_col] = 1 # Set the correct area to 1
         else:
-            raise ValueError(f"Unknown area: {area}. Expected one of {encoder_columns}")
+            raise ValueError(f"Unknown area: {area}. Expected one of {area_columns}")
         
         return data
     
@@ -48,7 +51,6 @@ class CostOfLivingForecaster:
         """
         try:
             features = self._prepare_features(year, 6, area, self._get_required_feature_columns())
-            
             predictions = self.model.predict(features)[0].tolist()
            
             return {
@@ -63,3 +65,7 @@ class CostOfLivingForecaster:
             }
         except Exception as e:
             return {"error": str(e)}
+        
+        
+forecaster = CostOfLivingForecaster()
+print(forecaster.predict(year=2026, area="Umoja"))
