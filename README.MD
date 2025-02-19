@@ -43,7 +43,7 @@ Before running the FastAPI server, you need to generate the model. Open **Jupyte
 jupyter notebook
 ```
 
-Run the `nairobi_cost_of_living_forecaster` notebook to train and save the model.
+Run the `nairobi_cost_of_living_forecaster_trainer` notebook to train and save the model.
 
 ---
 
