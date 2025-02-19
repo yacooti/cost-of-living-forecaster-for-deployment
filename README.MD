@@ -328,16 +328,29 @@ sudo systemctl restart nginx
 ```
 
 ### (c) Secure with SSL
-Install Certbot:
+#### Install Certbot Using snapd:
+Install snapd
 
 ```sh
-sudo apt install certbot python3-certbot-nginx -y
+sudo apt install snapd
+```
+
+Install certbot
+
+```sh
+sudo snap install --classic certbot
+```
+
+Prepare the Certbot command
+
+```sh
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
 ```
 
 Generate and apply an SSL certificate:
 
 ```sh
-sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
+sudo certbot --nginx
 ```
 
 Certbot will automatically renew SSL certificates.
