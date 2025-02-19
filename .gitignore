@@ -1,0 +1,78 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+*.venv
+
+# Cache files
+*.cache
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Testing
+.tox/
+.nox/
+coverage.*
+htmlcov/
+
+# Pytest cache
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+mypy-report.xml
+
+# Bandit security scan reports
+.bandit/
+
+# Docker
+*.dockerignore
+docker-compose.override.yml
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Local environment variables
+.env
+.env.local
+.env.*.local
+
+# SQLite database files
+*.sqlite3
+*.db
+
+# Temporary files
+*.swp
+*.swo
+*.bak
+*.tmp
+
+#Exclude the model
+models/*
+
+# Exclude the data file
+nairobi_cost_of_living.csv
