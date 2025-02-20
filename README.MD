@@ -111,6 +111,12 @@ On your local machine, generate SSH keys (if not already done):
 ssh-keygen -t rsa -b 4096 -C "your-email@example.com"
 ```
 
+Or
+
+```sh
+ssh-keygen -t ed25519 -C "your-email@example.com"
+```
+
 Add the public key to DigitalOcean:
 - Copy it: `cat ~/.ssh/id_rsa.pub` or `cat ~/.ssh/id_ed25519.pub` depending on the **signature scheme** you used to generate your keys.
 - Paste it into **SSH Keys** while creating the droplet.
@@ -140,7 +146,13 @@ On your local computer, generate an SSH key pair if you don’t have one:
 ssh-keygen -t rsa -b 4096 -C "your-email@example.com"
 ```
 
-When prompted, press Enter to save the key to the default location (`~/.ssh/id_rsa`).
+Or
+
+```sh
+ssh-keygen -t ed25519 -C "your-email@example.com"
+```
+
+When prompted, press Enter to save the key to the default location (`~/.ssh/id_rsa` or `~/.ssh/id_ed25519`).
 
 #### Copy the SSH Key to the Server
 
@@ -197,6 +209,12 @@ Add the new key to the SSH agent:
 ```bash
 eval "$(ssh-agent -s)"
 sudo ssh-add ~/.ssh/id_rsa
+```
+
+Or
+```bash
+eval "$(ssh-agent -s)"
+sudo ssh-add ~/.ssh/id_ed25519
 ```
 
 Display the public key:
