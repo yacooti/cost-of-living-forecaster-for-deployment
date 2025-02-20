@@ -481,8 +481,12 @@ git config --list
    git remote add origin git@github.com:your-username/cost-of-living-forecaster.git
 
 ## 6. Update Your Remote Repository In Your Project (When Its Already A Repository)
+1. Open a terminal and navigate to your project folder:
+   ```sh
+   cd /path/to/your/project
+   ```
 
-1. Update the remote repository using SSH:
+2. Update the remote repository using SSH:
    ```sh
    git remote set-url origin git@github.com:your-username/cost-of-living-forecaster.git
    ```
