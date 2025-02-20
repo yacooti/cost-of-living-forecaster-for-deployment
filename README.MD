@@ -138,23 +138,7 @@ sudo usermod -aG sudo deploy
 su - deploy
 ```
 
-#### Generate SSH Key Pair on Your Local Machine
-
-On your local computer, generate an SSH key pair if you don’t have one:
-
-```bash
-ssh-keygen -t rsa -b 4096 -C "your-email@example.com"
-```
-
-Or
-
-```sh
-ssh-keygen -t ed25519 -C "your-email@example.com"
-```
-
-When prompted, press Enter to save the key to the default location (`~/.ssh/id_rsa` or `~/.ssh/id_ed25519`).
-
-#### Copy the SSH Key to the Server
+#### Copy Your SSH Key to the Server (For `deploy` User Account)
 
 First, display your public key on your local machine:
 
@@ -198,11 +182,18 @@ If successful, you can now SSH into the server as `deploy`.
 
 #### Set Up SSH Key for GitHub Access
 
-On the server, generate an SSH key for GitHub:
+On the server (`as deploy user`), generate an SSH key for GitHub:
 
 ```bash
 ssh-keygen -t rsa -b 4096 -C "your-server-email@example.com"
 ```
+
+Or
+
+```sh
+ssh-keygen -t ed25519 -C "your-email@example.com"
+```
+
 
 Add the new key to the SSH agent:
 
