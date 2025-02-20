@@ -441,12 +441,12 @@ git config --list
 ## 4. Create a GitHub Repository
 1. Go to [GitHub](https://github.com/) and log in.
 2. Click **"New repository"**.
-3. Enter a **Repository name** (e.g., `ml-crash-course`).
+3. Enter a **Repository name** (e.g., `cost-of-living-forecaster`).
 4. Choose **Public** or **Private**.
 5. Click **Create repository**.
-6. Copy the **SSH repository URL** (e.g., `git@github.com:your-username/ml-crash-course.git`).
+6. Copy the **SSH repository URL** (e.g., `git@github.com:your-username/cost-of-living-forecaster.git`).
 
-## 5. Initialize Git in Your Project
+## 5. Initialize Git in Your Project (If Its Not a Repository Already)
 1. Open a terminal and navigate to your project folder:
    ```sh
    cd /path/to/your/project
@@ -455,31 +455,37 @@ git config --list
    ```sh
    git init
    ```
-3. Add all files to Git:
+3. Add the remote repository using SSH:
    ```sh
-   git add .
-   ```
-4. Commit the changes:
+   git remote add origin git@github.com:your-username/cost-of-living-forecaster.git
+
+## 6. Update Your Remote Repository In Your Project (When Its Already A Repository)
+
+1. Update the remote repository using SSH:
    ```sh
-   git commit -m "Initial commit"
+   git remote set-url origin git@github.com:your-username/cost-of-living-forecaster.git
    ```
 
-## 6. Connect to GitHub and Push Code
-1. Add the remote repository using SSH:
-   ```sh
-   git remote add origin git@github.com:your-username/ml-crash-course.git
-   ```
-2. Verify the remote repository:
+## 7. Connect to GitHub and Push Code
+1. Verify the remote repository:
    ```sh
    git remote -v
    ```
-3. Push the code to GitHub:
+2. Add all files to Git:
+   ```sh
+   git add .
+   ```
+3. Commit the changes:
+   ```sh
+   git commit -m "Initial commit"
+   ```
+4. Push the code to GitHub:
    ```sh
    git branch -M main
    git push -u origin main
    ```
 
-## 7. Verify on GitHub
+## 8. Verify on GitHub
 Go to **GitHub → Your Repository**, and you should see your code.
 
 Happy coding! 🚀
