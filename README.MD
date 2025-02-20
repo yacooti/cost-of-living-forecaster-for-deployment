@@ -1,4 +1,6 @@
-# Cost of Living Forecaster Deployment Guide
+# **Machine Learning Crash Course: Cost of Living Prediction in Nairobi**
+
+## **Lesson II: Deploying Machine Learning Models to The Cloud**
 
 ## Prerequisites
 This course requires you to have:
