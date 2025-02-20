@@ -112,7 +112,7 @@ ssh-keygen -t rsa -b 4096 -C "your-email@example.com"
 ```
 
 Add the public key to DigitalOcean:
-- Copy it: `cat ~/.ssh/id_rsa.pub`
+- Copy it: `cat ~/.ssh/id_rsa.pub` or `cat ~/.ssh/id_ed25519.pub` depending on the **signature scheme** you used to generate your keys.
 - Paste it into **SSH Keys** while creating the droplet.
 
 Connect to the droplet:
@@ -148,6 +148,12 @@ First, display your public key on your local machine:
 
 ```bash
 cat ~/.ssh/id_rsa.pub
+```
+
+Or
+
+```bash
+cat ~/.ssh/id_ed25519.pub 
 ```
 
 Then, SSH into the server as the root user:
@@ -196,7 +202,13 @@ sudo ssh-add ~/.ssh/id_rsa
 Display the public key:
 
 ```bash
-cat ~/.ssh/id_rsa.pub
+cat ~/.ssh/id_rsa.pub 
+```
+
+Or
+
+```bash
+cat ~/.ssh/id_ed25519.pub 
 ```
 
 Copy and add this key to GitHub:
